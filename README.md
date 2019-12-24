@@ -15,8 +15,8 @@ I forget the tiny details...</h3>
 
 <p>-Remember to use "rake -T" to check rake commands. Generally, we are using:</p>
 
-<p>-rake db:create_migration NAME="name_of_database"</p>
----Output being "=># db/migrate/20150914201353_create_dogs.rb"<br>
+<p>-rake db:create_migration NAME="name_of_database"<br>
+---Output being "=># db/migrate/20150914201353_create_dogs.rb"<br></p>
 
 <p>-Replace your "up" and "down" methods with "change" in your migration file.</p>
 
