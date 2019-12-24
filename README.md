@@ -10,18 +10,18 @@ I forget the tiny details...</h3>
 <strong>-- run "bundle install"
 -- run "shotgun"
 
--If I ever forget how to find and shutdown servers that weren't shutdown properly,
-I can run "ps ax | grep shotgun" and then use "kill -9 #{server id}".
+<p>-If I ever forget how to find and shutdown servers that weren't shutdown properly,</p>
+<p>I can run "ps ax | grep shotgun" and then use "kill -9 #{server id}".</p>
 
--Remember to use "rake -T" to check rake commands. Generally, we are using:
+<p>-Remember to use "rake -T" to check rake commands. Generally, we are using:</p>
 
--rake db:create_migration NAME="name_of_database"
----Output being "=># db/migrate/20150914201353_create_dogs.rb"
+<p>-rake db:create_migration NAME="name_of_database"</p>
+<p>---Output being "=># db/migrate/20150914201353_create_dogs.rb"</p>
 
--Replace your "up" and "down" methods with "change" in your migration file.
+<p>-Replace your "up" and "down" methods with "change" in your migration file.</p>
 
----TABLE CREATION EXAMPLE---
-def change
+<p>---TABLE CREATION EXAMPLE---</p>
+<p>def change</p>
   create_table :dogs do |t|
     t.string :name
     t.string :breed
