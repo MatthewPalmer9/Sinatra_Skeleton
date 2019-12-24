@@ -22,10 +22,10 @@ I forget the tiny details...</h3>
 
 <p>---TABLE CREATION EXAMPLE---</p><br>
 def change<br>
-&nbsp;create_table :dogs do |t|<br>
-&nbsp; &nbsp; t.string :name<br>
-&nbsp; &nbsp; t.string :breed<br>
-&nbsp; end<br>
+&emsp;create_table :dogs do |t|<br>
+&emsp; &emsp; t.string :name<br>
+&emsp; &emsp; t.string :breed<br>
+&emsp; end<br>
 end<br>
 
 -Use "rake db:migrate SINATRA_ENV=development"
