@@ -20,13 +20,13 @@ I forget the tiny details...</h3>
 
 <p>-Replace your "up" and "down" methods with "change" in your migration file.</p>
 
-<p>---TABLE CREATION EXAMPLE---</p>
-<p>def change</p>
-  create_table :dogs do |t|
-    t.string :name
-    t.string :breed
-  end
-end
+<p>---TABLE CREATION EXAMPLE---</p><br>
+def change<br>
+  create_table :dogs do |t|<br>
+    t.string :name<br>
+    t.string :breed<br>
+  end<br>
+end<br>
 
 -Use "rake db:migrate SINATRA_ENV=development"
 </strong>
