@@ -1,11 +1,11 @@
-<h1>#Instructions</h1>
+<u><h1>#Instructions</h1></u>
 
 <h3>This repo is to serve for personal use. Any future projects that require Sinatra
 will utilize this skeleton repo to save myself time. Any example files will
 serve to refresh my memory and save valuable time researching in the event that
 I forget the tiny details...</h3>
 
-<h1>#Self notes:</h1>
+<u><h1>#Self notes:</h1><u>
 <h2>-Remember to:</h2>
 <strong>-- run "bundle install"
 -- run "shotgun"
@@ -20,7 +20,7 @@ I forget the tiny details...</h3>
 
 <p>-Replace your "up" and "down" methods with "change" in your migration file.</p>
 
-<h2><p>---TABLE CREATION EXAMPLE---</p></h2>
+<u><h2><p>---TABLE CREATION EXAMPLE---</p></h2></u>
 <h3>def change<br>
 &emsp;create_table :dogs do |t|<br>
 &emsp; &emsp; t.string :name<br>
