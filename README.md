@@ -20,7 +20,7 @@ I forget the tiny details...</h3>
 
 <p>-Replace your "up" and "down" methods with "change" in your migration file.</p>
 
-<p>---TABLE CREATION EXAMPLE---</p>
+<h2><p>---TABLE CREATION EXAMPLE---</p></h2>
 <h3>def change<br>
 &emsp;create_table :dogs do |t|<br>
 &emsp; &emsp; t.string :name<br>
