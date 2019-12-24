@@ -15,8 +15,8 @@ I forget the tiny details...</h3>
 
 <p>-Remember to use "rake -T" to check rake commands. Generally, we are using:</p>
 
-<p>-rake db:create_migration NAME="name_of_database"</p>
-<p>---Output being "=># db/migrate/20150914201353_create_dogs.rb"</p>
+<p>-rake db:create_migration NAME="name_of_database"</p><br>
+---Output being "=># db/migrate/20150914201353_create_dogs.rb"<br>
 
 <p>-Replace your "up" and "down" methods with "change" in your migration file.</p>
 
@@ -28,5 +28,4 @@ I forget the tiny details...</h3>
 &emsp; end<br>
 end<br></h3>
 
--Use "rake db:migrate SINATRA_ENV=development"
 </strong>
