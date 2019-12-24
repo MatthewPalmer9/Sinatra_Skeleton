@@ -1,13 +1,13 @@
-<h1>#Instructions<h2>
+<h1>#Instructions</h1>
 
-This repo is to serve for personal use. Any future projects that require Sinatra
+<h3>This repo is to serve for personal use. Any future projects that require Sinatra
 will utilize this skeleton repo to save myself time. Any example files will
 serve to refresh my memory and save valuable time researching in the event that
-I forget the tiny details...
+I forget the tiny details...</h3>
 
-#Self notes:
--Remember to:
--- run "bundle install"
+<h1>#Self notes:</h1>
+<h2>-Remember to:</h2>
+<strong>-- run "bundle install"
 -- run "shotgun"
 
 -If I ever forget how to find and shutdown servers that weren't shutdown properly,
@@ -29,3 +29,4 @@ def change
 end
 
 -Use "rake db:migrate SINATRA_ENV=development"
+</strong>
