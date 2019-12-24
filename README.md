@@ -8,7 +8,7 @@ I forget the tiny details...
 #Self notes:
 -Remember to:
 -- run "bundle install"
--- run "shotgun"
+-- run "shotgun" 
 
 -If I ever forget how to find and shutdown servers that weren't shutdown properly,
 I can run "ps ax | grep shotgun" and then use "kill -9 #{server id}".
