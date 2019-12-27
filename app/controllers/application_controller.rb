@@ -53,7 +53,7 @@ class ApplicationController < Sinatra::Base
 
   #User authentication example ---vv
   post "/login" do
-		user = User.find_by(username: params[:username])
+		user = User.find_by(:username => params[:username])
 		if user && user.authenticate(params[:password]) # .authenticate is a hidden method inside of Ruby. Metaprogramming...
 			session[:user_id] = user.id
 			redirect "/success"
@@ -61,4 +61,16 @@ class ApplicationController < Sinatra::Base
 			redirect "/failure"
 		end
 	end
+
+  #Although a helpers folder was created with its own class, we can also utilize it the same way below --vv
+  helpers do
+		def logged_in?
+			!!session[:user_id]
+		end
+
+		def current_user
+			User.find(session[:user_id])
+		end
+	end
+  
 end
