@@ -16,7 +16,7 @@ I can run "ps ax | grep shotgun" and then use "kill -9 #{server id}".
 <p>-Remember to use "rake -T" to check rake commands. Generally, we are using:</p>
 
 <p>-rake db:create_migration NAME="create_database"<br>
----Output being "=># db/migrate/20150914201353_create_database.rb"<br> All databases should follow naming law "Create<em>TableNameHere</em></p>
+---Output being "=># db/migrate/20150914201353_create_database.rb"<br> All databases should follow naming law "Create<em>TableNameHere"</em></p>
 
 <p>-Replace your "up" and "down" methods with "change" in your migration file.</p>
 
