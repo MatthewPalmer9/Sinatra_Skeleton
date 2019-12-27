@@ -62,7 +62,11 @@ class ApplicationController < Sinatra::Base
 		end
 	end
 
-  #Although a helpers folder was created with its own class, we can also utilize it the same way below --vv
+  # Although a helpers folder was created with its own class, we can also utilize it the same way below --vv
+  # The Helper Methods at the bottom of this controller are part of Sinatra's configurations for helper methods.
+  # These are methods that allow us to add logic to our views.
+  # Views automatically have access to all helper methods thanks to Sinatra.
+
   helpers do
 		def logged_in?
 			!!session[:user_id]
@@ -72,5 +76,5 @@ class ApplicationController < Sinatra::Base
 			User.find(session[:user_id])
 		end
 	end
-  
+
 end
