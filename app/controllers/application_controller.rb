@@ -54,7 +54,7 @@ class ApplicationController < Sinatra::Base
   #User authentication example ---vv
   post "/login" do
 		user = User.find_by(username: params[:username])
-		if user && user.authenticate(params[:password]) # .authenticate is a hidden method inside of of Ruby. Metaprogramming...
+		if user && user.authenticate(params[:password]) # .authenticate is a hidden method inside of Ruby. Metaprogramming...
 			session[:user_id] = user.id
 			redirect "/success"
 		else
