@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
     erb :'/registrations/signup'
   end
 
-  get '/registrations/failure' do
+  get '/failure' do
     erb :'/registrations/failure'
   end
 
