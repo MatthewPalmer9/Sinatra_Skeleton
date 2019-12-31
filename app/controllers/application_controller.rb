@@ -18,13 +18,13 @@ class ApplicationController < Sinatra::Base
     erb :'/registrations/signup'
   end
 
-  get '/failure' do
+  get '/registrations/failure' do
     erb :'/registrations/failure'
   end
 
-  post '/registrations' do
-    if params["name"].empty? || params["email"].empty? || params["password"].empty?
-      redirect '/failure'
+  post '/registrations/signup' do
+    if params[:name].empty? || params[:email].empty? || params[:password].empty?
+      redirect '/registrations/failure'
     end
 
     @user = User.new(name: params["name"], email: params["email"], password: params["password"])
@@ -35,18 +35,21 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/sessions/login' do
-
     # the line of code below render the view page in app/views/sessions/login.erb
     erb :'sessions/login'
   end
 
   post '/sessions' do
-    @user = User.find_by(email: params[:email], password: params[:password])
-    if @user
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect '/users/home'
     end
-    redirect '/sessions/login'
+    redirect '/sessions/failure'
+  end
+
+  get '/sessions/failure' do
+    erb :'/sessions/failure'
   end
 
   get '/sessions/logout' do
@@ -61,9 +64,9 @@ class ApplicationController < Sinatra::Base
 
   #User authentication example ---vv
   post "/login" do
-		user = User.find_by(:username => params[:username])
-		if user && user.authenticate(params[:password]) # .authenticate is a hidden method inside of Ruby. Metaprogramming...
-			session[:user_id] = user.id
+		@user = User.find_by(username: params[:username])
+		if @user && @user.authenticate(params[:password]) # .authenticate is a hidden method inside of Ruby. Metaprogramming...
+			session[:user_id] = @user.id
 			redirect "/success"
 		else
 			redirect "/failure"
