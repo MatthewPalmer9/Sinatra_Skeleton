@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1>Recipes!</h1>
+    <% count = 1 %>
+    <% @recipes.each do |recipe| %>
+    <% recipe_link = "/recipes/#{recipe.id}" %>
+    <strong><%= count %>.</strong> <a href="<%= recipe_link %>"><%= recipe.name %></a><br>
+    <% count += 1 %>
+    <% end %>
+
+    <br>
+
+    <h3><a href="recipes/new">Create a recipe?</a></h3><br><br><br>
+    <h5><<< <a href="/">...Back to Directory</a></h5>
+
+  </body>
+</html>

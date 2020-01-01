@@ -27,7 +27,15 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    erb :index
+  end
+
+  get '/home' do
     erb :home
+  end
+
+  get '/index' do
+    erb :'/recipe_views/index'
   end
 
   get '/registrations/signup' do
@@ -70,7 +78,7 @@ class ApplicationController < Sinatra::Base
 
   get '/sessions/logout' do
     session.clear
-    redirect '/'
+    erb :home
   end
 
   get '/users/home' do
@@ -81,7 +89,7 @@ class ApplicationController < Sinatra::Base
   #User authentication example ---vv
   post "/login" do
 		@user = User.find_by(username: params[:username])
-		if @user && @user.authenticate(params[:password]) # .authenticate is a hidden method inside of Ruby. Metaprogramming...
+		if @user && @user.authenticate(params[:password]) # .authenticate is a hidden method inside of Ruby's ActiveRecord Gem. Metaprogramming...
 			session[:user_id] = @user.id
 			redirect "/success"
 		else
@@ -103,5 +111,46 @@ class ApplicationController < Sinatra::Base
 			User.find(session[:user_id])
 		end
 	end
+
+  ####--START OF RECIPE ROUTES ( Includes CRUD [Create, Read, Update, Delete] )--####
+
+  get '/recipes' do
+    @recipes = Recipe.all
+    erb :'/recipe_views/index'
+  end
+
+  get '/recipes/new' do
+    erb :'/recipe_views/new'
+  end
+
+  get '/recipes/:id' do
+    @recipe = Recipe.find(params[:id])
+    erb :'/recipe_views/show'
+  end
+
+  get '/recipes/:id/edit' do
+    @recipe = Recipe.find(params[:id])
+    erb :'/recipe_views/edit'
+  end
+
+  post '/recipes' do
+    @recipe = Recipe.create(params)
+    redirect "/recipes/#{@recipe.id}"
+  end
+
+  patch '/recipes/:id' do
+    @recipe = Recipe.find(params[:id])
+    @recipe.name = params[:name]
+    @recipe.ingredients = params[:ingredients]
+    @recipe.cook_time = params[:cook_time]
+    @recipe.save
+    redirect to "/recipes/#{@recipe.id}"
+  end
+
+  delete '/recipes/:id' do
+   @recipe = Recipe.find(params[:id])
+   @recipe.delete
+   redirect '/recipes'
+  end
 
 end
